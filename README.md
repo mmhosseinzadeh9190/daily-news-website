@@ -1,6 +1,6 @@
 To properly set up the received files for your use, please follow these steps to install the required node_modules package:
 
-1. Navigate to the 'components' directory within the project folder.
+1. Navigate to the `components` directory within the project folder.
 2. Open a terminal window while positioned in this directory.
 3. Run the command `npm install` in the terminal.
 
