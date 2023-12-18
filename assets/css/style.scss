@@ -1,0 +1,4140 @@
+$primary: #b01927;
+$link-decoration: none;
+$grid-gutter-width: 1rem;
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1300px
+);
+
+$container-max-widths: (
+    sm: 540px,
+    md: 736px,
+    lg: 956px,
+    xl: 1156px,
+    xxl: 1246px
+);
+
+@import '../../components/node_modules/bootstrap/scss/bootstrap.scss';
+
+@font-face {
+    font-family: "yekan";
+    font-weight: normal;
+    src: url("../../components/fonts/yekan/yekan-normal.woff") format('woff');
+}
+
+@font-face {
+    font-family: "nasim";
+    font-weight: normal;
+    src: url("../../components/fonts/nasim/nassim-normal.woff") format('woff');
+}
+
+@font-face {
+    font-family: "nasim";
+    font-weight: bold;
+    src: url("../../components/fonts/nasim/nassim-bold.woff") format('woff');
+}
+
+@font-face {
+    font-family: "fontawesome";
+    font-weight: normal;
+    font-style: normal;
+    src: url("../assets/fonts/fontawesome/fontawesome-webfont.woff2") format('woff2');
+}
+
+html {
+    body {
+        font-family: "nasim", tahoma, helvetica, arial, sans-serif;
+        background-color: #f2f2f2;
+        font-size: 14px;
+        @media (max-width: 768px) {
+            .container {
+                max-width: 100%;
+            }
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            .top-nav {
+                box-sizing: border-box;
+                background-color: white;
+                .container {
+                    @media (max-width: 768px) {
+                        white-space: nowrap;
+                    }
+                    .navbar-right {
+                        .time {
+                            @media (max-width: 768px) {
+                                display: none;
+                            }
+                            @media (min-width: 768px) and (max-width: 1200px) {
+                                margin-bottom: 5px;
+                            }
+                            margin: 2px 2px 1.5px 10px;
+                            font-size: 12px;
+                            font-family: "yekan";
+                            .fa-calendar-days {
+                                font-size: 13px;
+                                margin: 0 6px 0 1.5px;
+                                position: relative;
+                                top: 1px;
+                                @media (min-width: 768px) and (max-width: 1200px) {
+                                    margin: 0 6px 0 1.5px;
+                                    top: 2px;
+                                }
+                            }
+                            .fa-clock {
+                                font-size: 10px;
+                                margin: 0 5px 0 2px;
+                                @media (min-width: 768px) and (max-width: 1200px) {
+                                    position: relative;
+                                    top: 1px;
+                                }
+                            }
+                        }
+                        .sign-in-dropdown {
+                            @media (min-width: 768px) and (max-width: 1200px) {
+                                margin-bottom: 5px;
+                                padding: 2.5px 6px 1.5px 7.5px;
+                            }
+                            background: #656565;
+                            border-radius: 2px;
+                            padding: 2px 6px 2px 7.5px;
+                            margin: 0 5px 1px 0;
+                            font-size: 14px;
+                            font-weight: bolder;
+                            @media (max-width: 768px) {
+                                padding: 2px 10px 1.5px 7.5px;
+                                margin: 4px 5px 5.5px 0;
+                            }
+                            a {
+                                color: white;
+                                i {
+                                    font-size: 12px;
+                                    position: relative;
+                                    top: 1px;
+                                }
+                                span {
+                                    position: relative;
+                                    bottom: 0.5px;
+                                    right: 3px;
+                                    font-size: 13px;
+                                    margin: 0 1px 0 2.5px;
+                                    @media (max-width: 768px) {
+                                        font-size: 11px;
+                                        bottom: 0;
+                                    }
+                                }
+                            }
+                            .dropdown-menu {
+                                transform: translate3d(-75px, 25px, 0px) !important;
+                                z-index: 10000;
+                                padding: 15px;
+                                inset: auto !important;
+                                top: 0 !important;
+                                left: 0 !important;
+                                form {
+                                    font-size: 13px;
+                                    text-align: right;
+                                    .form-control {
+                                        color: #555;
+                                        background-color: #fff;
+                                        border: 1px solid #ccc;
+                                        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+                                        transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+                                        border-radius: 0;
+                                        font-family: "nasim", tahoma, helvetica, arial, sans-serif;
+                                        width: 160px;
+                                        font-size: 13px;
+                                        padding: 7px 12px;
+                                        &::placeholder {
+                                            color: #999;
+                                            line-height: 1.428571429;
+                                        }
+                                        &:focus {
+                                            border-color: #921313;
+                                            outline: 0;
+                                            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(146, 19, 19, 0.6);
+                                        }
+                                    }
+                                    input[type="password"] {
+                                        border-top: 0;
+                                    }
+                                    .form-check {
+                                        display: flex;
+                                        margin: 10px 0 5px;
+                                        .form-check-input {
+                                            box-shadow: inset 0 1px 2px #fff, 0 1px 2px rgba(0, 0, 0, 0.2);
+                                            font: 11px tahoma;
+                                            border: 1px solid #a0a0a0;
+                                            height: 16px;
+                                            position: relative;
+                                            width: 16px;
+                                            bottom: -1px;
+                                            background: linear-gradient(#fff, #e6e6e6);
+                                            text-shadow: 0 1px 0 #fff;
+                                            &:checked::before {
+                                                color: #808080;
+                                                content: url(/assets/images/download.png);
+                                                height: 16px;
+                                                left: 2px;
+                                                top: 2px;
+                                                position: absolute;
+                                            }
+                                            &:active {
+                                                box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+                                            }
+                                            &:focus {
+                                                transition: border-color 200ms;
+                                                border-color: #4080fa;
+                                                outline: none;
+                                            }
+                                        }
+                                        .form-check-label {
+                                            font-weight: normal;
+                                            margin-right: 20px;
+                                            color: #444;
+                                            font-size: 13px;
+                                            position: relative;
+                                            bottom: 1.5px;
+                                        }
+                                    }
+                                    .dropdown-buttons {
+                                        .login-btn {
+                                            font-size: 14px;
+                                            width: 50%;
+                                            color: #fff;
+                                            background-color: #b71818;
+                                            border-color: #ae1717;
+                                            border-top-right-radius: 4px;
+                                            border-bottom-right-radius: 4px;
+                                            border-bottom-left-radius: 0;
+                                            border-top-left-radius: 0;
+                                        }
+                                        .membership-btn {
+                                            font-size: 14px;
+                                            width: 50%;
+                                            color: #333;
+                                            background-color: #fff;
+                                            border-color: #ccc;
+                                            border-top-left-radius: 4px;
+                                            border-bottom-left-radius: 4px;
+                                            border-bottom-right-radius: 0;
+                                            border-top-right-radius: 0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .navbar-left {
+                        @media (max-width: 768px) {
+                            position: relative;
+                            right: 96px;
+                        }
+                        margin: 3.5px 0 3px 0;
+                        .header-list-group {
+                            @media (min-width: 768px) and (max-width: 1200px) {
+                                display: none !important;
+                            }
+                            margin: 0;
+                            li {
+                                &:first-child {
+                                    a {
+                                        margin-right: 0;
+                                        border-right: 1px solid #ddd;
+                                        @media (max-width: 768px) {
+                                            border: none;
+                                        }
+                                    }
+                                }
+                                &:nth-child(5) {
+                                    a {
+                                        i {
+                                            font-size: 10px;
+                                        }
+                                    }
+                                }
+                                &:last-child {
+                                    a {
+                                        margin-left: 6px;
+                                    }
+                                }
+                                a {
+                                    font-weight: bold;
+                                    margin: 0 2px 0 4px;
+                                    padding: 9px 8px 8.5px 6px;
+                                    font-size: 13px;
+                                    color: #222;
+                                    @media (max-width: 768px) {
+                                        font-size: 11px;
+                                        margin: 0 4px 0 5px;
+                                        padding-bottom: 9.5px;
+                                    }
+                                    &:hover {
+                                        background-color: #ddd;
+                                    }
+                                    &:active {
+                                        background: #303030;
+                                        color: #999;
+                                    }
+                                    i {
+                                        font-size: 11px;
+                                        position: relative;
+                                        left: 2px;
+                                    }
+                                    span {
+                                        position: relative;
+                                        bottom: 1px;
+                                    }
+                                }
+                            }
+                        }
+                        .input-group {
+                            width: 198px;
+                            outline: none;
+                            caret-color: black;
+                            margin-left: 1px;
+                            @media (max-width: 768px) {
+                                display: none;
+                            }
+                            @media (min-width: 768px) and (max-width: 1200px) {
+                                &::before {
+                                    content: "";
+                                    border-right: 1px solid #ddd;
+                                    height: 31.5px;
+                                    position: relative;
+                                    bottom: 4px;
+                                    left: 2px;
+                                }
+                            }
+                            input {
+                                Font: 12px/1 tahoma;
+                                background: #e4e4e4;
+                                padding-right: 27px;
+                                padding-bottom: 9px;
+                                height: 28px;
+                                border: none;
+                                margin-left: 1px;
+                                &:focus {
+                                    background-color: #e4e4e4;
+                                    border: none;
+                                }
+                                &::placeholder {
+                                    color: #777;
+                                }
+                            }
+                            span {
+                                z-index: 1000;
+                                position: relative;
+                                left: 27px;
+                                bottom: 2px;
+                                background: #e4e4e4;
+                                i {
+                                    font-size: 13px;
+                                    color: $primary;
+                                    position: absolute;
+                                    bottom: 5px;
+                                    right: 4px;
+                                    @media (min-width: 768px) and (max-width: 1200px) {
+                                        bottom: 9px;
+                                        right: 4px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .middle-nav {
+                @media (min-width: 768px) and (max-width: 1200px) {
+                    margin-top: -6.5px;
+                }
+                @media (min-width: 768px) and (max-width: 992px) {
+                    background: #bb0000 url(../assets/images/header-overlay.png) no-repeat right 211px top -41px;
+                }
+                @media (max-width: 768px) {
+                    background: #bb0000 url(../assets/images/header-overlay.png) no-repeat right 203px top -41px;
+                }
+                @media (max-width: 992px) {
+                    display: flex;
+                    flex-direction: row-reverse;
+                    position: relative;
+                }
+                background-color: #bb0000;
+                .middle-nav-left-img {
+                    position: absolute;
+                    top: 9px;
+                    left: 8px;
+                    a {
+                        img {
+                            width: 120px;
+                            max-height: 50px;
+                        }
+                    }
+                }
+                .middle-nav-background {
+                    background: url(../assets/images/header-overlay.png) no-repeat right 262px top -28px;
+                    @media (min-width: 992px) and (max-width: 1200px) {
+                        background: url(../assets/images/header-overlay.png) no-repeat right 203px top -3px;
+                    }
+                    @media (max-width: 992px) {
+                        background: none;
+                    }
+                }
+                .middle-nav-right {
+                    align-items: center;
+                    margin-right: -6px;
+                    @media (min-width: 992px) and (max-width: 1200px) {
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
+                    @media (max-width: 992px) {
+                        flex-direction: row-reverse;
+                        margin-right: 7px;
+                    }
+                    a {
+                        padding: 8px 0 8px 8px;
+                        @media (min-width: 992px) and (max-width: 1200px) {
+                            padding: 9px 0 8px 0;
+                        }
+                        @media (max-width: 992px) {
+                            padding: 6.5px 0 4.5px 0;
+                            img {
+                                width: 120px;
+                            }
+                        }
+                    }
+                    .navbar {
+                        padding: 0;
+                        position: static;
+                        .navbar-toggler {
+                            border-radius: 0;
+                            border-color: #000;
+                            margin: 0 0 1px 14px;
+                            padding: 0.5px 5.2px 0;
+                            &:focus {
+                                box-shadow: none;
+                            }
+                            &:hover {
+                                background-color: #202020;
+                            }
+                            .navbar-toggler-icon {
+                                background-image: none;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                font-size: 21px;
+                                i {
+                                    color: #fff;
+                                }
+                            }
+                        }
+                        .navbar-collapse {
+                            @media (max-width: 992px) {
+                                position: absolute;
+                                top: 81px;
+                                left: 0;
+                                right: 0;
+                                background-color: #212121;
+                                z-index: 999;
+                                padding: 7.5px;
+                                .middle-nav-list {
+                                    flex-direction: column;
+                                }
+                            }
+                            @media (max-width: 768px) {
+                                padding: 7.5px 0;
+                            }
+                            .middle-nav-list {
+                                display: flex;
+                                align-items: center;
+                                li {
+                                    @media (max-width: 992px) {
+                                        width: 100%;
+                                    }
+                                    &:first-child {
+                                        @media (min-width: 992px) and (max-width: 1200px) {
+                                            .dropdown {
+                                                margin-right: 21px;
+                                            }
+                                        }
+                                    }
+                                    .dropdown {
+                                        position: static;
+                                        display: inline-block;
+                                        padding: 25.5px 0px 26.5px;
+                                        @media (max-width: 992px) {
+                                            display: block;
+                                            padding: 13.5px 11px 13px;          
+                                        }
+                                        @media (min-width: 992px) and (max-width: 1200px) {
+                                            margin-top: -28px;
+                                            margin-bottom: -2px;
+                                            padding: 26px 0;
+                                        }
+                                        &:hover {
+                                            background: #92191f;
+                                            box-shadow: inset 0 1px 6px 0 rgba(0, 0, 0, 0.3);
+                                            transition: all ease-in-out 0.15s;
+                                            @media (min-width: 768px) and (max-width: 1200px) {
+                                                box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3) inset;
+                                            }
+                                            .dropdown-menu {
+                                                display: block;
+                                            }
+                                        }
+                                        a {
+                                            padding: 0 10px;
+                                            color: white;
+                                            font-size: 18px;
+                                            font-weight: bold;
+                                            @media (min-width: 768px) and (max-width: 1200px) {
+                                                padding: 0 7.1px;
+                                            }
+                                            @media (max-width: 768px) {
+                                                padding: 0 7.5px;
+                                            }
+                                        }
+                                        i {
+                                            color: white;
+                                            font-size: 16px;
+                                            margin-right: 2px;
+                                            position: relative;
+                                            top: 0.5px;
+                                        }
+                                        .dropdown-menu {
+                                            background-color: #111;
+                                            border-bottom: 5px solid #b71818;
+                                            top: 112px !important;
+                                            left: 0 !important;
+                                            right: 0;
+                                            transform: translate3d(0px, 0px, 0px) !important;
+                                            border-left: 1px solid;
+                                            border-right: 1px solid;
+                                            margin-top: 0;
+                                            @media (min-width: 768px) and (max-width: 1200px) {
+                                                top: 156px !important;
+                                            }
+                                            @media (max-width: 992px) {
+                                                margin: 0 7.5px;
+                                                background: #353535 !important;
+                                            }
+                                            @media (max-width:768px) {
+                                                margin: 0;
+                                                .container {
+                                                    padding: 0;
+                                                }
+                                            }
+                                            li {
+                                                a {
+                                                    &:hover {
+                                                        background: #b71818;
+                                                        color: #fff;
+                                                    }
+                                                }
+                                            }
+                                            .row {
+                                                margin: 0;
+                                            }
+                                        }
+                                        .dropdown-menu-1 {
+                                            @media (max-width: 992px) {
+                                                top: 60px !important;
+                                                .container {
+                                                    max-width: 100%;
+                                                }
+                                            }
+                                            padding: 10px 0;
+                                            .col-lg-4 {
+                                                @media (max-width: 992px) {
+                                                    padding-bottom: 16px;
+                                                    &:last-child {
+                                                        padding-bottom: 0;
+                                                    }
+                                                    &:first-child,
+                                                    &:last-child {
+                                                        .dropdown-wrapper {
+                                                            li {
+                                                                &:nth-child(2n + 1) {
+                                                                    a {
+                                                                        margin-right: -4px;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                .dropdown-wrapper {
+                                                    display: flex;
+                                                    flex-wrap: wrap;
+                                                    background: #1b1b1b;
+                                                    text-align: right;
+                                                    li {
+                                                        line-height: 1;
+                                                        display: inline-block;
+                                                        width: 48%;
+                                                        text-align: right;
+                                                        color: white;
+                                                        margin-left: 2%;
+                                                        a {
+                                                            margin-bottom: 6px;
+                                                            display: block;
+                                                            transition: all .3s ease-in-out;
+                                                            padding: 5px 10px;
+                                                            font-weight: normal;
+                                                            font-size: 15px;
+                                                            overflow: hidden;
+                                                            white-space: nowrap;
+                                                            text-overflow: ellipsis;
+                                                            &:hover {
+                                                                padding-right: 6px;
+                                                            }
+                                                        }
+                                                    }
+                                                    .dropdown-menu-title {
+                                                        @media (max-width: 992px) {
+                                                            a {
+                                                                margin-right: 0 !important;
+                                                            }
+                                                        }
+                                                        width: 100%;
+                                                        text-align: center;
+                                                        margin: 0;
+                                                        a {
+                                                            background: #313131;
+                                                            margin: 0 0 7px 0;
+                                                            padding: 5px 0 7px;
+                                                            font-weight: bold;
+                                                            font-size: 16px;
+                                                            &:hover {
+                                                                padding-right: 0;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                .dropdown-wrapper-middle {
+                                                    li {
+                                                        width: 31%;
+                                                        @media (max-width: 992px) {
+                                                            &:nth-child(3n) {
+                                                                a {
+                                                                    margin-right: -4px;
+                                                                }
+                                                            }
+                                                            &:nth-child(3n + 1) {
+                                                                a {
+                                                                    margin-right: -8px;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .dropdown-menu-2 {
+                                            @media (max-width: 992px) {
+                                                top: 114px !important;
+                                                padding: 5px 0;
+                                                .container {
+                                                    max-width: 100%;
+                                                    .row {
+                                                        padding: 0 10px;
+                                                    }
+                                                }
+                                            }
+                                            padding: 15px 0;
+                                            ul {
+                                                li {
+                                                    @media (max-width: 992px) {
+                                                        width: 50%;
+                                                    }
+                                                    width: 16.66%;
+                                                    a {
+                                                        @media (max-width: 992px) {
+                                                            width: 100%;
+                                                            margin: 4px 0;
+                                                        }
+                                                        line-height: 1;
+                                                        font-size: 17px;
+                                                        font-weight: normal;
+                                                        display: block;
+                                                        text-align: right;
+                                                        margin: 2px 0;
+                                                        padding: 6px 10px 10px;
+                                                        width: 97%;
+                                                        color: #fff;
+                                                        font-family: "nasim", tahoma, helvetica, arial, sans-serif;
+                                                        border-left: 1px solid #444;
+                                                        &:hover {
+                                                            i {
+                                                                color: #fff;
+                                                            }
+                                                        }
+                                                        &:active {
+                                                            background: #333;
+                                                            color: #999;
+                                                            i {
+                                                            color: #999;
+                                                            }
+                                                        }
+                                                        i {
+                                                            position: relative;
+                                                            left: 3.5px;
+                                                            bottom: -2px;
+                                                            font-size: 13px;
+                                                            color: #b71818;
+                                                            margin-left: 3px;
+                                                        }
+                                                    }
+                                                    &:last-child {
+                                                        a {
+                                                            border: none;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .dropdown-menu-3 {
+                                            @media (max-width: 992px) {
+                                                top: 168px !important;
+                                            }
+                                            ul {
+                                                li {
+                                                    a {
+                                                        display: flex;
+                                                    }
+                                                    &:nth-child(6n) {
+                                                        a {
+                                                            border: none;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .dropdown-menu-4 {
+                                            @media (max-width: 992px) {
+                                                top: 222px !important;
+                                                padding: 5px 0;
+                                                .container {
+                                                    .row {
+                                                        padding: 0;
+                                                    }
+                                                }
+                                            }
+                                            padding: 13px 0 18px;
+                                            ul {
+                                                li {
+                                                    width: 110px;
+                                                    margin: 0 5.5px;
+                                                    @media (max-width: 992px) {
+                                                        width: 49%;
+                                                        margin: 0;
+                                                    }
+                                                    a {
+                                                        background: white;
+                                                        border-radius: 7px;
+                                                        padding: 5px;
+                                                        width: auto;
+                                                        @media (max-width: 992px) {
+                                                            text-align: center;
+                                                            margin: 3.8px 0;
+                                                            img {
+                                                                width: 100px;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .dropdown-menu-5 {
+                                            @media (max-width: 992px) {
+                                                top: 274.5px !important;
+                                            }
+                                            ul {
+                                                li {
+                                                    width: 14.2%;
+                                                    @media (max-width: 992px) {
+                                                        width: 50%;
+                                                        a {
+                                                            width: 100%;
+                                                            margin: 4px 0;
+                                                            padding: 5.5px 10px 10.5px;
+                                                            i {
+                                                                top: 1.5px;
+                                                                margin-left: 4px;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                .position-relative {
+                                    a {
+                                        position: relative;
+                                        top: -1.5px;
+                                        @media (min-width: 992px) and (max-width: 1200px) {
+                                            top: -0.5px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .middle-nav-left {
+                    display: flex;
+                    @media (max-width: 992px) {
+                        display: none;
+                    }
+                }
+            }
+            .down-nav {
+                margin-right: -1px;
+                position: relative;
+                .container {
+                    @media (min-width: 1300px) {
+                        max-width: 1290px;
+                    }
+                    @media (max-width: 768px) {
+                        max-width: 100%;
+                    }
+                }
+                background: #dedede;
+                .down-nav-content {
+                    .down-nav-list {
+                        @media (max-width: 1200px) {
+                            white-space: nowrap;
+                            overflow-x: scroll;
+                            &::-webkit-scrollbar {
+                                display: none;
+                            }
+                        }
+                        .down-nav-menu-btn {
+                            line-height: 1;
+                            &:hover {
+                                background: #cecece;
+                            }
+                            i {
+                                color: $primary;
+                                font-size: 16px;
+                                margin: 0;
+                            }
+                        }
+                        li {
+                            font-family: "nasim", tahoma, helvetica, arial, sans-serif;
+                            font-size: 16px;
+                            &::after {
+                                display: inline-block;
+                                content: "";
+                                border-left: 1px solid #b7b7b7;
+                                height: 17px;
+                                position: relative;
+                                top: 5px;
+                            }
+                            &:last-child {
+                                &::after {
+                                    content: "";
+                                    border: none;
+                                }
+                            }
+                            &:first-child {
+                                &::after {
+                                    content: "";
+                                    border: none;
+                                }
+                                a {
+                                    margin-left: 0;
+                                }
+                            }
+                            a {
+                                display: inline-block;
+                                color: #111;
+                                padding: 6px 4px;
+                                margin: 0 2px 0 3px;
+                                &:hover {
+                                    color: white;
+                                }
+                            }
+                            .color-483D8B {
+                                &:hover {
+                                    background-color: #483D8B;
+                                }
+                            }
+                            .color-006666 {
+                                &:hover {
+                                    background-color: #006666;
+                                }
+                            }
+                            .color-DC143C {
+                                &:hover {
+                                    background-color: #DC143C;
+                                }
+                            }
+                            .color-0099CC {
+                                &:hover {
+                                    background-color: #0099CC;
+                                }
+                            }
+                            .color-08BF11 {
+                                &:hover {
+                                    background-color: #08BF11;
+                                }
+                            }
+                            .color-336699 {
+                                &:hover {
+                                    background-color: #336699;
+                                }
+                            }
+                            .color-CC00CC {
+                                &:hover {
+                                    background-color: #CC00CC;
+                                }
+                            }
+                            .color-0066FF {
+                                &:hover {
+                                    background-color: #0066FF;
+                                }
+                            }
+                            .color-DAA520 {
+                                &:hover {
+                                    background-color: #DAA520;
+                                }
+                            }
+                            .color-8B0000 {
+                                &:hover {
+                                    background-color: #8B0000;
+                                }
+                            }
+                            .color-228B22 {
+                                &:hover {
+                                    background-color: #228B22;
+                                }
+                            }
+                            .color-1E90FF {
+                                &:hover {
+                                    background-color: #1E90FF;
+                                }
+                            }
+                            .color-bb0000 {
+                                &:hover {
+                                    background-color: #bb0000;
+                                }
+                            }
+                        }
+                        .dropdown {
+                            a {
+                                margin-left: 0;
+                            }
+                            position: static;
+                            &:hover {
+                                .dropdown-menu {
+                                    display: block;
+                                }
+                            }
+                            .dropdown-menu {
+                                position: absolute;
+                                top: 36px !important;
+                                right: 0;
+                                width: 100%;
+                                text-align: right;
+                                transform: translate3d(0px, 0px, 0px) !important;
+                                z-index: 999;
+                                border: none;
+                                background: #d2d2d2;
+                                box-shadow: 0 1px 1px #888;
+                                padding: 10px 0;
+                                .row {
+                                    margin: 0;
+                                    .col-xs-6 {
+                                        &:nth-child(6n) {
+                                            a {
+                                                border: none;
+                                            }
+                                        }
+                                        &:last-child, &:first-child {
+                                            a {
+                                                padding: 5px;
+                                            }
+                                        }
+                                        a {
+                                            margin: 0;
+                                            width: 100%;
+                                            display: inline-block;
+                                            line-height: 1;
+                                            color: #444;
+                                            white-space: nowrap;
+                                            text-overflow: ellipsis;
+                                            overflow: hidden;
+                                            border-left: 1px solid #aaa;
+                                            &:hover {
+                                                color: white;
+                                                i {
+                                                    color: #000;
+                                                }
+                                            }
+                                            i {
+                                                display: inline-block;
+                                                border-radius: 5px;
+                                                box-shadow: 0 1px 3px #aaa;
+                                                background: #FFF;
+                                                font-size: 12px;
+                                                padding: 1px 1.5px;
+                                            }
+                                            .fa-rss {
+                                                font-size: 13px;
+                                                color: #f26522;
+                                                padding: 0.5px 2px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .eco-dropdown {
+                                .col-xs-6 {
+                                    a {
+                                        padding: 5px 26px 5px 5px;
+                                        &:hover {
+                                            background: #006666;
+                                        }
+                                    }
+                                }
+                            }
+                            .bank-dropdown {
+                                .col-xs-6 {
+                                    a {
+                                        padding: 5px;
+                                        &:hover {
+                                            background: #483D8B;
+                                        }
+                                        img {
+                                            margin-left: 3px;
+                                        }
+                                    }
+                                }
+                            }
+                            .insurance-dropdown {
+                                .col-xs-6 {
+                                    &:nth-child(24),&:nth-child(25) {
+                                        a {
+                                            padding: 5px 26px 5px 5px;
+                                        }
+                                    }
+                                    a {
+                                        padding: 5px;
+                                        &:hover {
+                                            background: #0099CC;
+                                        }
+                                        img {
+                                            margin-left: 3px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        main {
+            @media (max-width: 768px) {
+                margin-top: 127px;
+            }
+            @media (min-width: 768px) {
+                margin-top: 155px;
+            }
+            .content-img {
+                position: relative;
+                background: white;
+                overflow: hidden;
+                img {
+                    position: relative;
+                    width: 100%;
+                    transition: all 0.9s ease-in-out;
+                }
+            }
+            .content-list {
+                list-style: none;
+                padding: 0;
+                a {
+                    display: block;
+                    padding: 12px;
+                    max-height: 100px;
+                    overflow: hidden;
+                }
+                .content-img {
+                    margin-left: 7px;
+                }
+                .content-text {
+                    color: #222;
+                    .pre-text {
+                        line-height: 1.22;
+                        margin: 0 0 2px;
+                        padding: 0;
+                        font-size: 15px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        color: #555;
+                    }
+                    .body-text {
+                        margin: 0;
+                        padding: 0;
+                        font-weight: bold;
+                        font-size: 16px;
+                        line-height: 1.335;
+                    }
+                }
+            }
+            .img-wrapper {
+                a {
+                    position: relative;
+                    display: block;
+                    border: solid #dfdfdd;
+                    border-width: 0 0 0.16px 0.16px;
+                    background: white;
+                    padding: 3px;
+                    .pre-text {
+                        display: block;
+                        line-height: 1.1;
+                        margin-bottom: 2.5px;
+                        font-size: 17px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        @media (max-width: 768px) {
+                            font-size: 13px;
+                        }
+                    }
+                    .body-text {
+                        font-size: 30px;
+                        font-weight: bold;
+                        margin: 0;
+                        @media (max-width: 768px) {
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+            .img-overlay {
+                .content-img {
+                    &::before {
+                        content: '';
+                        background: linear-gradient(0deg, rgba(0, 0, 0, 0.95) 30%, rgba(0, 0, 0, 0) 100%);
+                        height: 83px;
+                        position: absolute;
+                        bottom: 0;
+                        width: 100%;
+                        z-index: 100;
+                    }
+                }
+                .content-text {
+                    position: absolute;
+                    bottom: 3px;
+                    left: 3px;
+                    right: 3px;
+                    color: white;
+                    padding: 20px 20px 18px;
+                    z-index: 100;
+                    @media (max-width: 768px) {
+                        padding: 11px 11px 9px;
+                    }
+                }
+            }
+            .Vertical-circle-list {
+                ul {
+                    border: solid #dfdfdd;
+                    border-width: 0 0 0.16px 0.16px;
+                    background: #fff;
+                    a {
+                        padding: 7px 0 5px;
+                        border-bottom: 1px solid #dfdfdd;
+                        .content-text {
+                            .body-text {
+                                line-height: 1.34;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                                font-weight: normal;
+                                font-size: 15px;
+                                overflow: hidden;
+                                &::before {
+                                    font-family: FontAwesome;
+                                    content: "\f111";
+                                    display: inline-block;
+                                    font-size: 8px;
+                                    line-height: 1;
+                                    border-radius: 100%;
+                                    margin: 0 0 0 5px;
+                                    position: relative;
+                                    top: 1px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .icon {
+                &::after {
+                    font-family: "fontawesome";
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    background: rgba(30, 30, 30, 0.8);
+                    padding: 3px 6px;
+                    font-size: 16px;
+                    color: #fff;
+                    z-index: 100;
+                }
+            }
+            .video {
+                &::after {
+                    content: '\f04b';
+                }
+            }
+            .content-title {
+                margin-bottom: 7px;
+                h3 {
+                    transition: all .3s ease-in-out;
+                    margin: 0;
+                    font-size: 15px;
+                    font-weight: bold;
+                    a {
+                        color: #444;
+                    }
+                    i {
+                        margin-left: 7px;
+                        font-size: 15px;
+                        top: 2px;
+                        position: relative;
+                    }
+                }
+            }
+            .main-first-content {
+                @media (min-width: 992px) and (max-width: 1200px) {
+                    margin-top: -3px;
+                }
+                @media (min-width: 768px) and (max-width: 992px) {
+                    margin-top: -28.5px;
+                }
+                position: relative;
+                margin: 0 auto;
+                margin-bottom: 22px;
+                @media (max-width: 768px) {
+                    margin-bottom: 2px;
+                }
+                .carousel-icons {
+                    @media (max-width: 768px) {
+                        display: none;
+                    }
+                    max-width: 1340px;
+                    margin: 0 auto;
+                    position: relative;
+                    z-index: 0;
+                    .carousel-icon {
+                        width: 50%;
+                        height: 550px;
+                        position: absolute;
+                        &:hover {
+                            i {
+                                opacity: 1;
+                            }
+                        }
+                        span {
+                            display: inline-block;
+                            position: relative;
+                            top: 150px;
+                            i {
+                                opacity: 0.5;
+                                color: #9c1414;
+                                font-size: 30px;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                    .carousel-right-icon {
+                        right: 0;
+                        span {
+                            padding: 40px 8px 38px 11px;
+                        }
+                    }
+                    .carousel-left-icon {
+                        left: 0;
+                        text-align: left;
+                        span {
+                            padding: 40px 11px 38px 8px;
+                        }
+                    }
+                }
+                .carousel {
+                    .carousel-indicators {
+                        display: block;
+                        position: relative;
+                        margin: 0 0 5px 0;
+                        @media (max-width: 768px) {
+                            width: 500px;
+                        }
+                        li {
+                            display: table-cell;
+                            width: 1%;
+                            span {
+                                color: #777;
+                                font-size: 19px;
+                                font-weight: bold;
+                                padding-top: 0;
+                                margin: 0 5px;
+                                display: block;
+                                text-align: center;
+                                cursor: pointer;
+                                &::before {
+                                    content: "";
+                                    display: block;
+                                    width: 100%;
+                                    height: 6px;
+                                    background: #c5c5c5;
+                                    margin-bottom: 5px;
+                                }
+                            }
+                        }
+                        .active {
+                            span {
+                                color: #555;
+                                &::before {
+                                    background-color: #555;
+                                }
+                            }
+                        }
+                        .economy-indicator {
+                            &:hover,
+                            &:active {
+                                span {
+                                    color: #B22222;
+                                    &::before {
+                                        background: #B22222;
+                                    }
+                                }
+                            }
+                        }
+                        .politics-indicator {
+                            &:hover,
+                            &:active {
+                                span {
+                                    color: #3300CC;
+                                    &::before {
+                                        background: #3300CC;
+                                    }
+                                }
+                            }
+                        }
+                        .culture-indicator {
+                            &:hover,
+                            &:active {
+                                span {
+                                    color: #0040AD;
+                                    &::before {
+                                        background: #0040AD;
+                                    }
+                                }
+                            }
+                        }
+                        .technology-indicator {
+                            &:hover,
+                            &:active {
+                                span {
+                                    color: #7B68EE;
+                                    &::before {
+                                        background: #7B68EE;
+                                    }
+                                }
+                            }
+                        }
+                        .society-indicator {
+                            &:hover,
+                            &:active {
+                                span {
+                                    color: #BA55D3;
+                                    &::before {
+                                        background: #BA55D3;
+                                    }
+                                }
+                            }
+                        }
+                        .sport-indicator {
+                            &:hover,
+                            &:active {
+                                span {
+                                    color: #FF8C00;
+                                    &::before {
+                                        background: #FF8C00;
+                                    }
+                                }
+                            }
+                        }
+                        .health-indicator {
+                            &:hover,
+                            &:active {
+                                span {
+                                    color: #F08080;
+                                    &::before {
+                                        background: #F08080;
+                                    }
+                                }
+                            }
+                        }
+                        .provinces-indicator {
+                            &:hover,
+                            &:active {
+                                span {
+                                    color: #006600;
+                                    &::before {
+                                        background: #006600;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .carousel-item {
+                        transition: transform 0.6s ease-in-out;
+                        .content-right {
+                            padding-right: 0;
+                            @media (max-width: 768px) {
+                                padding: 0;
+                            }
+                            .col-6-header {
+                                background: transparent;
+                                border-bottom: 1px solid #dbdbdb;
+                                padding-bottom: 1px;
+                                .col-6-header-title {
+                                    .sub-title {
+                                        font-size: 16px;
+                                        font-weight: bold;
+                                        margin-left: 5px;
+                                        @media (max-width: 768px) {
+                                            display: none;
+                                        }
+                                    }
+                                    .sub-description {
+                                        width: 86%;
+                                        font-size: 18px;
+                                        &:hover {
+                                            a {
+                                                color: #b71818;
+                                            }
+                                        }
+                                        @media (min-width: 768px) and (max-width: 1200px) {
+                                            width: 83%;
+                                        }
+                                        a {
+                                            color: #22486f;
+                                            display: inline-block;
+                                        }
+                                    }
+                                }
+                            }
+                            .col-6-main {
+                                &:hover img {
+                                    transform: scale(1.02);
+                                }
+                                .content-img {
+                                    img {
+                                        height: 380px;
+                                    }
+                                }
+                                .badge {
+                                    position: absolute;
+                                    top: 41px;
+                                    right: 13px;
+                                    border-radius: 0;
+                                    padding: 5px 8px 4px;
+                                    z-index: 100;
+                                    color: white;
+                                    border: none;
+                                    font-size: 13px;
+                                }
+                            }
+                            .content-list {
+                                margin-top: 11px;
+                                @media (max-width: 768px) {
+                                    margin-top: 4px;
+                                    margin-bottom: 0;
+                                }
+                                li {
+                                    a {
+                                        @media (max-width: 768px) {
+                                            margin-bottom: 2px;
+                                        }
+                                        position: relative;
+                                        border: solid #dfdfdd;
+                                        border-width: 0 0 0.16px 0.16px;
+                                        background: white;
+                                        &:hover {
+                                            img {
+                                                transform: scale(1.02);
+                                            }
+                                            .pre-text,
+                                            .body-text {
+                                                color: #b71818;
+                                            }
+                                        }
+                                        .content-img {
+                                            width: 100px;
+                                            height: 75px;
+                                            &::after {
+                                                padding: 2.5px 6.2px;
+                                                font-size: 13px;
+                                            }
+                                            img {
+                                                box-shadow: 0 0 0 1px #dfdfdd;
+                                                object-fit: cover;
+                                            }
+                                        }
+                                        .content-text {
+                                            @media (min-width: 768px) and (max-width: 1200px) {
+                                                width: 46%;
+                                            }
+                                            @media (min-width: 768px) and (max-width: 992px) {
+                                                .pre-text {
+                                                    font-size: 13px;
+                                                }
+                                                .body-text {
+                                                    font-size: 14px;
+                                                }
+                                            }
+                                            width: 56%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .content-middle {
+                            margin-top: 3px;
+                            @media (max-width: 768px) {
+                                margin-top: 0;
+                                padding: 0;
+                            }
+                            .content-middle-wrapper {
+                                position: relative;
+                                .content-title {
+                                    a {
+                                        &:hover {
+                                            color: #b71818;
+                                        }
+                                    }
+                                }
+                                &:hover {
+                                    .content-title {
+                                        h3 {
+                                            margin-right: 5px;
+                                        }
+                                    }
+                                }
+                            }
+                            .content-middle-list {
+                                .content-list {
+                                    li {
+                                        &:nth-child(13), &:nth-child(14) {
+                                            @media (min-width: 576px) and (max-width: 1200px) {
+                                                display: none;
+                                            }
+                                        }
+                                        &:last-child {
+                                            display: none;
+                                            @media (min-width: 1300px) {
+                                                display: block;
+                                                a {
+                                                    border: none;
+                                                }
+                                            }
+                                        }
+                                        a {
+                                            margin: 0 12px;
+                                            &:hover {
+                                                .body-text {
+                                                    color: #b71818;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .content-left {
+                            padding-left: 0;
+                            @media (max-width: 768px) {
+                                padding: 0;
+                            }
+                            .content-title {
+                                @media (max-width: 768px) {
+                                    display: none;
+                                }
+                                h3 {
+                                    margin-bottom: -2px;
+                                    i {
+                                        top: 4px;
+                                    }
+                                    a {
+                                        display: inline-block;
+                                        width: 91%;
+                                        @media (min-width: 768px) and (max-width: 1200px) {
+                                            width: 89%;
+                                        }
+                                        color: #666;
+                                        .ads-text {
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: space-between;
+                                            position: relative;
+                                            top: 1.5px;
+                                            &:hover {
+                                                color: #b71818;
+                                                .ads-number {
+                                                    color: #b71818;
+                                                }
+                                            }
+                                            .ads-number {
+                                                font-size: 20px;
+                                                position: relative;
+                                                top: 2px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .content-left-ads {
+                                @media (max-width: 768px) {
+                                    display: flex;
+                                    justify-content: center;
+                                    padding-bottom: 10px;
+                                    margin-bottom: 1px;
+                                    border-bottom: 1px solid #dfdfdd;
+                                }
+                                img {
+                                    width: 100%;
+                                    @media (max-width: 768px) {
+                                        width: auto;
+                                    }
+                                }
+                            }
+                            .content-left-tags {
+                                @media (max-width: 768px) {
+                                    display: none;
+                                }
+                                margin-top: 10px;
+                                &:hover {
+                                    .content-title {
+                                        h3 {
+                                            margin-right: 5px;
+                                        }
+                                    }
+                                }
+                                .content-title {
+                                    h3 {
+                                        a {
+                                            color: $primary;
+                                        }
+                                    }
+                                }
+                                .tags-box {
+                                    .tags-box-wrapper {
+                                        background: white;
+                                    }
+                                    margin-bottom: 15px;
+                                    border: solid #dfdfdd;
+                                    border-width: 0 0 0.16px 0.16px;
+                                    border-top: 3px solid #c5c5c5;
+                                    .tags-list {
+                                        height: 153px;
+                                        overflow: hidden;
+                                        margin: 0;
+                                        font-size: 15px;
+                                        padding: 12px;
+                                        @media (min-width: 1300px) {
+                                            height: 161px;
+                                        }
+                                        li {
+                                            display:inline-block;
+                                            padding: 0;
+                                            width: -moz-fit-content;
+                                            width: fit-content;
+                                            a {
+                                                color: #254d6b;
+                                                display: inline-block;
+                                                &:hover {
+                                                    color: #b71818;
+                                                }
+                                                &::after {
+                                                    margin: 0 1px;
+                                                    content: ' | ';
+                                                    color: #bbb;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .economy-slide {
+                        .sub-title,
+                        .slide-title {
+                            color: #b22222;
+                        }
+                        .badge {
+                            background-color: #b22222;
+                        }
+                        .content-middle-list {
+                            border-top: 3px solid #B80404;
+                            .body-text {
+                                &::before {
+                                    color: #B80404;
+                                }
+                            }
+                        }
+                        .video {
+                            &::after {
+                                background: rgba(178, 34, 34, 0.8);
+                            }
+                        }
+                    }
+                    .politics-slide {
+                        .sub-title,
+                        .slide-title {
+                            color: #3300CC;
+                        }
+                        .badge {
+                            background-color: #3300CC;
+                        }
+                        .content-middle-list {
+                            border-top: 3px solid #483D8B;
+                            .body-text {
+                                &::before {
+                                    color: #483D8B;
+                                }
+                            }
+                        }
+                        .video {
+                            &::after {
+                                background: rgba(51, 0, 204, 0.8);
+                            }
+                        }
+                    }
+                    .culture-slide {
+                        .sub-title,
+                        .slide-title {
+                            color: #0040AD;
+                        }
+                        .badge {
+                            background-color: #0040AD;
+                        }
+                        .content-middle-list {
+                            border-top: 3px solid #0040AD;
+                            .body-text {
+                                &::before {
+                                    color: #0040AD;
+                                }
+                            }
+                        }
+                        .video {
+                            &::after {
+                                background: rgba(0, 64, 173, 0.8);
+                            }
+                        }
+                    }
+                    .technology-slide {
+                        .sub-title,
+                        .slide-title {
+                            color: #7B68EE;
+                        }
+                        .badge {
+                            background-color: #7B68EE;
+                        }
+                        .content-middle-list {
+                            border-top: 3px solid #7B68EE;
+                            .body-text {
+                                &::before {
+                                    color: #7B68EE;
+                                }
+                            }
+                        }
+                        .video {
+                            &::after {
+                                background: rgba(123, 104, 238, 0.8);
+                            }
+                        }
+                    }
+                    .society-slide {
+                        .sub-title,
+                        .slide-title {
+                            color: #BA55D3;
+                        }
+                        .badge {
+                            background-color: #BA55D3;
+                        }
+                        .content-middle-list {
+                            border-top: 3px solid #BA55D3;
+                            .body-text {
+                                &::before {
+                                    color: #BA55D3;
+                                }
+                            }
+                        }
+                        .video {
+                            &::after {
+                                background: rgba(186, 85, 211, 0.8)
+                            }
+                        }
+                    }
+                    .sport-slide {
+                        .sub-title,
+                        .slide-title {
+                            color: #FF8C00;
+                        }
+                        .badge {
+                            background-color: #FF8C00;
+                        }
+                        .content-middle-list {
+                            border-top: 3px solid #FF8C00;
+                            .body-text {
+                                &::before {
+                                    color: #FF8C00;
+                                }
+                            }
+                        }
+                        .video {
+                            &::after {
+                                background: rgba(255, 140, 0, 0.8);
+                            }
+                        }
+                    }
+                    .health-slide {
+                        .sub-title,
+                        .slide-title {
+                            color: #F08080;
+                        }
+                        .badge {
+                            background-color: #F08080;
+                        }
+                        .content-middle-list {
+                            border-top: 3px solid #F08080;
+                            .body-text {
+                                &::before {
+                                    color: #F08080;
+                                }
+                            }
+                        }
+                        .video {
+                            &::after {
+                                background: rgba(240, 128, 128, 0.8);
+                            }
+                        }
+                    }
+                    .provinces-slide {
+                        .sub-title,
+                        .slide-title {
+                            color: #006600;
+                        }
+                        .badge {
+                            background-color: #006600;
+                        }
+                        .content-middle-list {
+                            border-top: 3px solid #006600;
+                            .body-text {
+                                &::before {
+                                    color: #006600;
+                                }
+                            }
+                        }
+                        .video {
+                            &::after {
+                                background: rgba(0, 102, 0, 0.8);
+                            }
+                        }
+                    }
+                }
+                .main-first-content-ads {
+                    a {
+                        display: block;
+                        img {
+                            width: 100%;
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+            }
+            .main-second-content {
+                margin-bottom: 22px;
+                @media (min-width: 768px) and (max-width: 992px) {
+                    margin-bottom: 20px;
+                }
+                @media (max-width: 768px) {
+                    margin-bottom: 16px;
+                }
+                .col-lg-9 {
+                    @media (min-width: 768px) and (max-width: 1200px) {
+                        margin-top: -1.5px;
+                    }
+                    .content-title {
+                        display: flex;
+                        justify-content: space-between;
+                        h3 {
+                            display: inline;
+                        }
+                        .label {
+                            border-radius: 0 0 2px 2px;
+                            background-color: #e8e8e8;
+                            color: #666;
+                            font-family: "yekan";
+                            font-size: 11px;
+                            line-height: 1;
+                            padding: 3px 10px 0;
+                            position: relative;
+                            top: 2px;
+                            &:hover {
+                                background: #555;
+                                color: #fff;
+                            }
+                        }
+                    }
+                    .col-lg-4 {
+                        &:first-child,
+                        &:nth-child(2) {
+                            @media (max-width: 768px) {
+                                display: none;
+                            }
+                        }
+                        .col-md-4-wrapper {
+                            margin-bottom: 20px;
+                            &:hover {
+                                .content-title {
+                                    h3 {
+                                        margin-right: 5px;
+                                    }
+                                }
+                            }
+                            .tab-table {
+                                border: solid #dfdfdd;
+                                border-width: 0 0 0.16px 0.16px;
+                                ul {
+                                    padding: 0;
+                                    border: none;
+                                    display: block;
+                                    position: relative;
+                                    li {
+                                        display: table-cell;
+                                        width: 1%;
+                                        font-size: 16px;
+                                        a {
+                                            @media (min-width: 768px) and (max-width: 1200px) {
+                                                padding: 6px 0 6.5px;
+                                            }
+                                            display: block;
+                                            text-align: center;
+                                            border-top: 3px solid #c00;
+                                            padding: 6.5px 0 7px;
+                                            background: #f8f8f8;
+                                            color: #4e4e4e;
+                                            box-shadow: inset 0 0 1px 0 rgba(0, 0, 0, 0.36), inset 0 0 8px 1px rgba(165, 164, 164, 0.5);
+                                            margin-left: -1px;
+                                            margin-right: auto;
+                                            &:hover {
+                                                background: #eee;
+                                                box-shadow: 0 0 13px #c0c0c0 inset;
+                                            }
+                                        }
+                                        .active {
+                                            color: #b71818;
+                                            background: #f2f2f2;
+                                            box-shadow: none;
+                                            border-color: #ff3131;
+                                            margin-left: -1px;
+                                            margin-right: auto;
+                                            &:hover {
+                                                background: #f2f2f2;
+                                                box-shadow: none;
+                                            }
+                                        }
+                                    }
+                                }
+                                .tab-content {
+                                    background-color: white;
+                                    .tab-pane {
+                                        height: 236px;
+                                        @media (min-width: 768px) and (max-width: 992px) {
+                                            height: 205px;
+                                        }
+                                        table {
+                                            width: 100%;
+                                            thead {
+                                                color: #717171;
+                                                background-color: #f2f2f2;
+                                                th {
+                                                    font-size: 16px;
+                                                    padding: 4px 8px;
+                                                    font-weight: normal;
+                                                    border-bottom: 1px solid #dfdfdf;
+                                                    &:last-child {
+                                                        padding: 4px 0 4px 2px;
+                                                        @media (min-width: 768px) and (max-width: 1200px) {
+                                                            display: none;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            tbody {
+                                                tr {
+                                                    &:hover {
+                                                        background: #fff0e5;
+                                                    }
+                                                    td {
+                                                        font-size: 12px;
+                                                        &:nth-child(2), &:nth-child(3) {
+                                                            font-family: "yekan";
+                                                        }
+                                                        &:last-child {
+                                                            @media (min-width: 768px) and (max-width: 1200px) {
+                                                                display: none;
+                                                            }
+                                                            padding: 8px 0 8px 2px;
+                                                            a {
+                                                                display: flex;
+                                                                justify-content: center;
+                                                            }
+                                                        }
+                                                    }
+                                                    th {
+                                                        @media (min-width: 768px) and (max-width: 1200px) {
+                                                            font-size: 13px;
+                                                        }
+                                                        font-size: 16px;
+                                                        font-weight: normal;
+                                                    }
+                                                    td, th {
+                                                        border-top: 1px solid #ddd;
+                                                        padding: 7.3px 8px 7.3px 0;
+                                                        @media (min-width: 768px) and (max-width: 992px) {
+                                                            padding-right: 2px;
+                                                        }
+                                                        span, a {
+                                                            color: #333;
+                                                        }
+                                                        span {
+                                                            &::after {
+                                                                font-family: FontAwesome;
+                                                                margin-right: 3px;
+                                                                display: inline-block;
+                                                                font-size: 12px;
+                                                            }
+                                                        }
+                                                        .fa-chart-column {
+                                                            padding: 3px 4px 3px 5px;
+                                                            font-size: 16px;
+                                                            display: block;
+                                                            margin: 0 auto;
+                                                            width: 27px;
+                                                            background: white;
+                                                            box-shadow: inset 0 0 0 1px #d4d4d4;
+                                                            color: #b71818;
+                                                            &:hover {
+                                                                background: #b71818;
+                                                                color: white;
+                                                                box-shadow: inset 0 0 0 1px #b71818;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                .negative-change {
+                                                    td {
+                                                        &:nth-child(2) {
+                                                            span {
+                                                                span {
+                                                                    color: #bd0a0a;
+                                                                    &::after {
+                                                                        content: "\f0d7";
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                .positive-change {
+                                                    td {
+                                                        &:nth-child(2) {
+                                                            span {
+                                                                span {
+                                                                    color: #1d8809;
+                                                                    &::after {
+                                                                        content: "\f0d8";
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .scroll-table {
+                                .tab-content {
+                                    background-color: transparent;
+                                    .tab-pane {
+                                        .scroll-fixer {
+                                            background: #f2f2f2;
+                                            position: relative;
+                                            overflow: hidden;
+                                            .table-wrapper {
+                                                background-color: white;
+                                                overflow-y: scroll;
+                                                height: 226px;
+                                                @media (min-width: 768px) and (max-width: 992px) {
+                                                    height: 195px;
+                                                }
+                                                table {
+                                                    thead {
+                                                        color: #444;
+                                                    }
+                                                    tbody {
+                                                        th {
+                                                            span {
+                                                                img {
+                                                                    margin-left: 2px;
+                                                                    width: 16px;
+                                                                    height: 20px;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .col-sm-12 {
+                        .col-md-4-wrapper {
+                            margin-bottom: 10px;
+                            .tab-table {
+                                ul {
+                                    li {
+                                        a {
+                                            padding: 6.4px 0 !important;
+                                        }
+                                    }
+                                }
+                                .tab-content {
+                                    .tab-pane {
+                                        height: 208px !important;
+                                        table {
+                                            thead {
+                                                th {
+                                                    padding: 7.2px 8px 3.5px !important;
+                                                    &:last-child {
+                                                        display: none;
+                                                    }
+                                                }
+                                            }
+                                            tbody {
+                                                td {
+                                                    &:last-child {
+                                                        display: none;
+                                                    }
+                                                }
+                                                th, td {
+                                                    padding: 4.5px 8px 5.5px 0 !important;
+                                                    a {
+                                                        font-size: 13px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        &:nth-child(3),
+                                        &:last-child {
+                                            height: 240px !important;
+                                            .scroll-fixer {
+                                                background-color: #f2f2f2 !important;
+                                                position: relative;
+                                                overflow: hidden;
+                                                height: 240px;
+                                                .table-wrapper {
+                                                    background-color: white;
+                                                    overflow-y: scroll;
+                                                    height: 230px;
+                                                    table {
+                                                        thead {
+                                                            color: #444;
+                                                            th {
+                                                                padding: 10px 8px 3.5px !important;
+                                                            }
+                                                        }
+                                                        tbody {
+                                                            th {
+                                                                span {
+                                                                    img {
+                                                                        margin-left: 2px;
+                                                                        width: 16px;
+                                                                        height: 20px;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .converter-box-wrapper {
+                        &:hover {
+                            .content-title {
+                                h3 {
+                                    margin-right: 5px;
+                                }
+                            }
+                        }
+                        margin-bottom: 20px;
+                        .convert-column {
+                            margin-bottom: 0;
+                            border-collapse: separate;
+                            width: 100%;
+                            border-top: 3px solid #a4171e;
+                            .convert-input {
+                                input {
+                                    font-family: yekan;
+                                    font-size: 17px;
+                                    font-weight: bold;
+                                    text-align: center;
+                                    padding: 17px 16px;
+                                    line-height: 1.333;
+                                    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+                                    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+                                    display: block;
+                                    width: 100%;
+                                    color: #555;
+                                    background-color: #fff;
+                                    background-image: none;
+                                    border: 1px solid #ccc;
+                                    &:focus {
+                                        border-color: #921313;
+                                        outline: 0;
+                                        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(146, 19, 19, 0.6);
+                                    }
+                                    &::placeholder {
+                                        color: #999;
+                                    }
+                                }
+                            }
+                            .convert-items {
+                                @media (max-width: 768px) {
+                                    display: flex;
+                                }
+                                .convert-unit {
+                                    position: relative;
+                                    @media (max-width: 768px) {
+                                        flex: auto;
+                                        &:first-child {
+                                            margin-left: 60px;
+                                        }
+                                    }
+                                    select {
+                                        @media (min-width: 768px) and (max-width: 1200px) {
+                                            padding: 14px 17px 14.5px 17px;
+                                        }
+                                        width: 100%;
+                                        padding: 14.5px 14px 14.5px 20px;
+                                        text-align: center;
+                                        font-size: 17px;
+                                        font-weight: bold;
+                                        background: #f5f5f5;
+                                        box-shadow: inset 0 0 6px #bbb;
+                                        border: none;
+                                    }
+                                    i {
+                                        position: absolute;
+                                        left: 15px;
+                                        top: 19px;
+                                        color: #999;
+                                        font-size: 15px;
+                                        @media (min-width: 768px) and (max-width: 1200px) {
+                                            top: 18px;
+                                        }
+                                    }
+                                }
+                            }
+                            .convert-result {
+                                background: #383838;
+                                padding: 13.6px 10px;
+                                text-align: center;
+                                color: #fff;
+                                font-size: 17px;
+                                font-weight: bold;
+                                font-family: yekan;
+                                @media (min-width: 768px) and (max-width: 992px) {
+                                    padding: 4px 10px 7px;
+                                }
+                            }
+                            .convert-btn {
+                                .btn-convert {
+                                    background-color: #b71818;
+                                    border-color: #ae1717;
+                                    color: white;
+                                    padding: 13.5px 0 14px;
+                                    font-size: 17px;
+                                    font-weight: bold;
+                                    @media (min-width: 768px) and (max-width: 992px) {
+                                        padding: 6.5px;
+                                    }
+                                    &:hover {
+                                        color: #fff;
+                                        background-color: #a51616;
+                                        border-color: #991414;
+                                    }
+                                }
+                                i {
+                                    font-size: 15px;
+                                    margin-right: 11px;
+                                    position: relative;
+                                    bottom: -2px;
+                                    left: 2px;
+                                }
+                            }
+                        }
+                    }
+                    .second-content-news {
+                        .col-md-4 {
+                            &:hover {
+                                .content-title {
+                                    h3 {
+                                        margin-right: 5px;
+                                    }
+                                }
+                            }
+                            .content-title {
+                                h3 {
+                                    a {
+                                        position: relative;
+                                        top: 1px;
+                                    }
+                                }
+                            }
+                            .small-news {
+                                border-top: 3px solid #444;
+                                a {
+                                    background: white;
+                                    margin-bottom: 10px;
+                                    border: solid #dfdfdd;
+                                    border-width: 0 0 0.16px 0.16px;
+                                    &:hover img {
+                                        transform: scale(1.02);
+                                    }
+                                    .content-img {
+                                        width: 100px;
+                                        height: 75px;
+                                        img {
+                                            box-shadow: 0 0 0 1px #dfdfdd;
+                                            object-fit: cover;
+                                        }
+                                    }
+                                    .content-text {
+                                        @media (min-width: 768px) and (max-width: 1200px) {
+                                            width: 46%;
+                                            overflow: hidden;
+                                        }
+                                        @media (min-width: 768px) and (max-width: 992px) {
+                                            .pre-text {
+                                                font-size: 13px;
+                                            }
+                                            .body-text {
+                                                font-size: 14px;
+                                            }
+                                        }
+                                        width: 56%;
+                                    }
+                                }
+                            }
+                            &:nth-child(2) {
+                                .small-news {
+                                    border-top-color: #6A5ACD;
+                                }
+                            }
+                            &:nth-child(3) {
+                                .small-news {
+                                    border-top-color: #00BFFF;
+                                }
+                            }
+                            &:nth-child(4) {
+                                .small-news {
+                                    border-top-color: #DC143C;
+                                }
+                            }
+                            &:nth-child(5) {
+                                .small-news {
+                                    border-top-color: #BA55D3;
+                                }
+                            }
+                            &:last-child {
+                                .small-news {
+                                    border-top-color: #228B22;
+                                }
+                            }
+                        }
+                    }
+                }
+                .col-lg-3 {
+                    padding-top: 25px;
+                    @media (min-width: 768px) and (max-width: 992px) {
+                        padding-top: 15px;
+                    }
+                    ul {
+                        padding: 0;
+                        @media (min-width: 768px) and (max-width: 992px) {
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: center;
+                            margin: 0;
+                        }
+                        li {
+                            margin-bottom: 10px;
+                            a {
+                                img {
+                                    width: 100%;
+                                    @media (min-width: 768px) and (max-width: 992px) {
+                                        width: 230px;
+                                        height: 77px;
+                                        margin: 0 5px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .main-news-content {
+                .news-card {
+                    @media (max-width: 768px) {
+                        margin-bottom: 22px;
+                        .cards-topic {
+                            .cards-topic-right-side {
+                                flex-direction: column;
+                                width: 100%;
+                                .topic-sub-tags {
+                                    background-color: #ddd;
+                                    margin-top: 8px;
+                                    margin-right: 0;
+                                    margin-bottom: -5px;
+                                    ul {
+                                        li {
+                                            a {
+                                                padding: 9.5px 8px;
+                                                margin-left: 5px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    margin-bottom: 16px;
+                    &:hover {
+                        .main-topic {
+                            margin-right: 5px;
+                        }
+                    }
+                    @media (min-width: 768px) and (max-width: 992px) {
+                        margin-bottom: 6px;
+                    }
+                    .cards-topic {
+                        position: relative;
+                        border-top: 3px solid #555;
+                        padding: 1px 0 8px;
+                        @media (min-width: 768px) and (max-width: 992px) {
+                            padding-bottom: 11px;
+                        }
+                        .main-topic {
+                            transition: all .3s ease-in-out;
+                            a {
+                                font-weight: bold;
+                                font-size: 20px;
+                                color: #555;
+                                position: relative;
+                                bottom: -4px;
+                                @media (min-width: 768px) and (max-width: 992px) {
+                                    bottom: -6.5px;
+                                }
+                                @media (max-width: 768px) {
+                                    bottom: -2.5px;
+                                }
+                                i {
+                                    position: relative;
+                                    bottom: -1px;
+                                    font-size: 15px;
+                                    margin-left: 8px;
+                                }
+                                .fa-chevron-left {
+                                    font-size: 14px;
+                                    margin: 0 7px;
+                                    position: relative;
+                                    bottom: -2px;
+                                }
+                            }
+                        }
+                        .topic-sub-tags {
+                            margin-right: 5px;
+                            ul {
+                                @media (max-width: 768px) {
+                                    white-space: nowrap;
+                                    overflow-x: scroll;
+                                    flex-wrap: nowrap;
+                                }
+                                li {
+                                    a {
+                                        color: #333;
+                                        font-size: 17px;
+                                        padding: 9px 9px 0;
+                                        position: relative;
+                                        display: block;
+                                    }
+                                }
+                            }
+                        }
+                        .news-card-icons {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            margin-top: 6px;
+                            @media (max-width: 768px) {
+                                margin-top: 5px;
+                            }
+                            a {
+                                color: #666;
+                                padding: 7px 15px 5px;
+                                background: #e0e0e0;
+                                margin-right: 7px;
+                                display: inline-block;
+                                line-height: 1;
+                                i {
+                                    font-size: 16px;
+                                }
+                            }
+                            .feed-icon {
+                                &:hover {
+                                    background: #f90;
+                                    color: #fff;
+                                }
+                            }
+                            .setting-icon {
+                                &:hover {
+                                    background: #333;
+                                    color: #fff;
+                                }
+                            }
+                        }
+                    }
+                    .side-box {
+                        &:last-child {
+                            a {
+                                .content-text {
+                                    .body-text {
+                                        margin-bottom: 22.5px;
+                                        line-height: 1.2;
+                                        @media (min-width: 1200px) and (max-width: 1300px) {
+                                            margin-bottom: 38px;
+                                        }
+                                        @media (min-width: 992px) and (max-width: 1200px) {
+                                            margin-bottom: 43.5px;
+                                        }
+                                        @media (min-width: 768px) and (max-width: 992px) {
+                                            margin-bottom: 21.5px;
+                                            line-height: 1.06;
+                                        }
+                                        @media (max-width: 768px) {
+                                            margin-bottom: 0;
+                                            line-height: 1.1;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        a {
+                            &:hover img {
+                                transform: scale(1.02);
+                            }
+                            .content-text {
+                                padding: 10px;
+                                color: #222;
+                                overflow: hidden;
+                                @media (min-width: 768px) and (max-width: 992px) {
+                                    padding-bottom: 0;
+                                }
+                                .pre-text {
+                                    margin: 0.5px 0 3px;
+                                    font-size: 16px;
+                                    color: #555;
+                                    @media (max-width: 768px) {
+                                        font-size: 14px;
+                                    }
+                                }
+                                .body-text {
+                                    font-size: 23px;
+                                    line-height: 1.22;
+                                    @media (max-width: 768px) {
+                                        font-size: 17px;
+                                        line-height: 1.1;
+                                    }
+                                    @media (min-width: 1200px) and (max-width: 1300px) {
+                                        margin-bottom: 16px;
+                                    }
+                                    @media (min-width: 992px) and (max-width: 1200px) {
+                                        margin-bottom: 21px;
+                                    }
+                                    @media (min-width: 768px) and (max-width: 992px) {
+                                        margin-bottom: 0;
+                                        font-size: 19px;
+                                        line-height: 1.06;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .side-ads-box {
+                        a {
+                            display: block;
+                            img {
+                                width: 100%;
+                            }
+                        }
+                    }
+                    .col-lg-3 {
+                        .news-right-list {
+                            background: white;
+                            border: solid #dfdfdd;
+                            border-width: 0 0 0.16px 0.16px;
+                            li {
+                                &:last-child a {
+                                    border: none;
+                                }
+                                a {
+                                    &:hover img {
+                                        transform: scale(1.02);
+                                    }
+                                    border: none;
+                                    border-bottom: 1px solid #dfdfdd;
+                                    padding: 12px 0;
+                                    margin: 0 12px;
+                                    .content-img {
+                                        width: 100px;
+                                        height: 75px;
+                                        img {
+                                            box-shadow: 0 0 0 1px #dfdfdd;
+                                            object-fit: cover;
+                                        }
+                                    }
+                                    .content-text {
+                                        @media (min-width: 768px) and (max-width: 1200px) {
+                                            width: 46%;
+                                        }
+                                        width: 56%;
+                                    }
+                                }
+                            }
+                        }
+                        .news-left-list {
+                            @media (max-width: 768px) {
+                                margin-bottom: 0;
+                            }
+                            padding: 9px 12px 8px;
+                            li {
+                                &:last-child {
+                                    a {
+                                        border: none;
+                                    }
+                                }
+                                a {
+                                    padding: 5.2px 0;
+                                    .content-text {
+                                        .body-text {
+                                            &::before {
+                                                font-size: 7px;
+                                                @media (min-width: 768px) and (max-width: 992px) {
+                                                    top: 0;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .Vertical-circle-list {
+                        @media (min-width: 768px) and (max-width: 992px) {
+                            .content-list {
+                                li {
+                                    &:nth-child(n + 8) {
+                                        display: none;
+                                    }
+                                    &:nth-child(7) {
+                                        a {
+                                            border-bottom: none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .pecuniary-card,
+                .knowledge-based-economy-card,
+                .roads-development-card,
+                .green-economy-card,
+                .life-style-card,
+                .health-economy-card,
+                .market-guide-card {
+                    @media (min-width: 768px) and (max-width: 992px) {
+                        .topic-sub-tags {
+                            li {
+                                &:nth-child(n + 5) {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+                .capital-market-card,
+                .sport-economy-card,
+                .car-card,
+                .tourism-card,
+                .requirements-card {
+                    @media (min-width: 768px) and (max-width: 992px) {
+                        .topic-sub-tags {
+                            li {
+                                &:nth-child(n + 6) {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+                .key-figures-card,
+                .art-culture-economy-card {
+                    @media (min-width: 768px) and (max-width: 992px) {
+                        .topic-sub-tags {
+                            li {
+                                &:nth-child(n + 7) {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+                .knowledge-based-economy-card,
+                .art-culture-economy-card,
+                .requirements-card {
+                    @media (min-width: 992px) and (max-width: 1300px) {
+                        .cards-topic {
+                            .cards-topic-right-side {
+                                flex-direction: column;
+                                .topic-sub-tags {
+                                    ul {
+                                        li {
+                                            &:first-child {
+                                                a {
+                                                    padding-right: 3px;
+                                                }
+                                            }
+                                            a {
+                                                padding-top: 15px;
+                                                margin-bottom: -1px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .sport-economy-card,
+                .roads-development-card,
+                .green-economy-card,
+                .tourism-card,
+                .life-style-card,
+                .market-guide-card {
+                    @media (min-width: 992px) and (max-width: 1200px) {
+                        .cards-topic {
+                            .cards-topic-right-side {
+                                flex-direction: column;
+                                .topic-sub-tags {
+                                    ul {
+                                        li {
+                                            &:first-child {
+                                                a {
+                                                    padding-right: 3px;
+                                                }
+                                            }
+                                            a {
+                                                padding-top: 15px;
+                                                margin-bottom: -1px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .pecuniary-card {
+                    .cards-topic {
+                        border-top: 3px solid #483D8B;
+                        .main-topic {
+                            a {
+                                color: #483D8B;
+                            }
+                        }
+                        .topic-sub-tags {
+                            ul {
+                                li {
+                                    a {
+                                        &:hover {
+                                            color: #483D8B;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .side-box,
+                    .content-list {
+                        a {
+                            &:hover {
+                                .pre-text,
+                                .body-text {
+                                    color: #483D8B;
+                                }
+                            }
+                        }
+                    }
+                    .Vertical-circle-list {
+                        ul {
+                            li {
+                                a {
+                                    &:hover {
+                                        border-color: #483D8B;
+                                        .body-text {
+                                            color: #483D8B;
+                                        }
+                                    }
+                                    .body-text {
+                                        &::before {
+                                            color: #483D8B;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .capital-market-card {
+                    .cards-topic {
+                        border-top: 3px solid #228B22;
+                        .main-topic {
+                            a {
+                                color: #228B22;
+                            }
+                        }
+                        .topic-sub-tags {
+                            ul {
+                                li {
+                                    a {
+                                        &:hover {
+                                            color: #228B22;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .side-box,
+                    .content-list {
+                        a {
+                            &:hover {
+                                .pre-text,
+                                .body-text {
+                                    color: #228B22;
+                                }
+                            }
+                        }
+                    }
+                    .Vertical-circle-list {
+                        ul {
+                            li {
+                                a {
+                                    &:hover {
+                                        border-color: #228B22;
+                                        .body-text {
+                                            color: #228B22;
+                                        }
+                                    }
+                                    .body-text {
+                                        &::before {
+                                            color: #228B22;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .key-figures-card {
+                    .cards-topic {
+                        border-top: 3px solid #7F05A1;
+                        .main-topic {
+                            a {
+                                color: #7F05A1;
+                            }
+                        }
+                        .topic-sub-tags {
+                            ul {
+                                li {
+                                    a {
+                                        &:hover {
+                                            color: #7F05A1;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .side-box,
+                    .content-list {
+                        a {
+                            &:hover {
+                                .pre-text,
+                                .body-text {
+                                    color: #7F05A1;
+                                }
+                            }
+                        }
+                    }
+                    .Vertical-circle-list {
+                        ul {
+                            li {
+                                a {
+                                    &:hover {
+                                        border-color: #7F05A1;
+                                        .body-text {
+                                            color: #7F05A1;
+                                        }
+                                    }
+                                    .body-text {
+                                        &::before {
+                                            color: #7F05A1;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .knowledge-based-economy-card {
+                    .cards-topic {
+                        border-top: 3px solid #7B68EE;
+                        .main-topic {
+                            a {
+                                color: #7B68EE;
+                            }
+                        }
+                        .topic-sub-tags {
+                            ul {
+                                li {
+                                    a {
+                                        &:hover {
+                                            color: #7B68EE;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .side-box,
+                    .content-list {
+                        a {
+                            &:hover {
+                                .pre-text,
+                                .body-text {
+                                    color: #7B68EE;
+                                }
+                            }
+                        }
+                    }
+                    .Vertical-circle-list {
+                        ul {
+                            li {
+                                a {
+                                    &:hover {
+                                        border-color: #7B68EE;;
+                                        .body-text {
+                                            color: #7B68EE;
+                                        }
+                                    }
+                                    .body-text {
+                                        &::before {
+                                            color: #7B68EE;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .art-culture-economy-card {
+                    .cards-topic {
+                        border-top: 3px solid #0040AD;
+                        .main-topic {
+                            a {
+                                color: #0040AD;
+                            }
+                        }
+                        .topic-sub-tags {
+                            ul {
+                                li {
+                                    a {
+                                        &:hover {
+                                            color: #0040AD;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .side-box,
+                    .content-list {
+                        a {
+                            &:hover {
+                                .pre-text,
+                                .body-text {
+                                    color: #0040AD;
+                                }
+                            }
+                        }
+                    }
+                    .Vertical-circle-list {
+                        ul {
+                            li {
+                                a {
+                                    &:hover {
+                                        border-color: #0040AD;
+                                        .body-text {
+                                            color: #0040AD;
+                                        }
+                                    }
+                                    .body-text {
+                                        &::before {
+                                            color: #0040AD;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .sport-economy-card {
+                    .cards-topic {
+                        border-top: 3px solid #FF8C00;
+                        .main-topic {
+                            a {
+                                color: #FF8C00;
+                            }
+                        }
+                        .topic-sub-tags {
+                            ul {
+                                li {
+                                    a {
+                                        &:hover {
+                                            color: #FF8C00;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .side-box,
+                    .content-list {
+                        a {
+                            &:hover {
+                                .pre-text,
+                                .body-text {
+                                    color: #FF8C00;
+                                }
+                            }
+                        }
+                    }
+                    .Vertical-circle-list {
+                        ul {
+                            li {
+                                a {
+                                    &:hover {
+                                        border-color: #FF8C00;
+                                        .body-text {
+                                            color: #FF8C00;
+                                        }
+                                    }
+                                    .body-text {
+                                        &::before {
+                                            color: #FF8C00;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .car-card {
+                    .cards-topic {
+                        border-top: 3px solid #DAA520;
+                        .main-topic {
+                            a {
+                                color: #DAA520;
+                            }
+                        }
+                        .topic-sub-tags {
+                            ul {
+                                li {
+                                    a {
+                                        &:hover {
+                                            color: #DAA520;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .side-box,
+                    .content-list {
+                        a {
+                            &:hover {
+                                .pre-text,
+                                .body-text {
+                                    color: #DAA520;
+                                }
+                            }
+                        }
+                    }
+                    .Vertical-circle-list {
+                        ul {
+                            li {
+                                a {
+                                    &:hover {
+                                        border-color: #DAA520;
+                                        .body-text {
+                                            color: #DAA520;
+                                        }
+                                    }
+                                    .body-text {
+                                        &::before {
+                                            color: #DAA520;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .roads-development-card {
+                    .cards-topic {
+                        border-top: 3px solid #283803;
+                        .main-topic {
+                            a {
+                                color: #283803;
+                            }
+                        }
+                        .topic-sub-tags {
+                            ul {
+                                li {
+                                    a {
+                                        &:hover {
+                                            color: #283803;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .side-box,
+                    .content-list {
+                        a {
+                            &:hover {
+                                .pre-text,
+                                .body-text {
+                                    color: #283803;
+                                }
+                            }
+                        }
+                    }
+                    .Vertical-circle-list {
+                        ul {
+                            li {
+                                a {
+                                    &:hover {
+                                        border-color: #283803;
+                                        .body-text {
+                                            color: #283803;
+                                        }
+                                    }
+                                    .body-text {
+                                        &::before {
+                                            color: #283803;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .green-economy-card {
+                    .cards-topic {
+                        border-top: 3px solid #006400;
+                        .main-topic {
+                            a {
+                                color: #006400;
+                            }
+                        }
+                        .topic-sub-tags {
+                            ul {
+                                li {
+                                    a {
+                                        &:hover {
+                                            color: #006400;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .side-box,
+                    .content-list {
+                        a {
+                            &:hover {
+                                .pre-text,
+                                .body-text {
+                                    color: #006400;
+                                }
+                            }
+                        }
+                    }
+                    .Vertical-circle-list {
+                        ul {
+                            li {
+                                a {
+                                    &:hover {
+                                        border-color: #006400;
+                                        .body-text {
+                                            color: #006400;
+                                        }
+                                    }
+                                    .body-text {
+                                        &::before {
+                                            color: #006400;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .tourism-card {
+                    .cards-topic {
+                        border-top: 3px solid #008B8B;
+                        .main-topic {
+                            a {
+                                color: #008B8B;
+                            }
+                        }
+                        .topic-sub-tags {
+                            ul {
+                                li {
+                                    a {
+                                        &:hover {
+                                            color: #008B8B;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .side-box,
+                    .content-list {
+                        a {
+                            &:hover {
+                                .pre-text,
+                                .body-text {
+                                    color: #008B8B;
+                                }
+                            }
+                        }
+                    }
+                    .Vertical-circle-list {
+                        ul {
+                            li {
+                                a {
+                                    &:hover {
+                                        border-color: #008B8B;
+                                        .body-text {
+                                            color: #008B8B;
+                                        }
+                                    }
+                                    .body-text {
+                                        &::before {
+                                            color: #008B8B;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .life-style-card {
+                    .cards-topic {
+                        border-top: 3px solid #C71585;
+                        .main-topic {
+                            a {
+                                color: #C71585;
+                            }
+                        }
+                        .topic-sub-tags {
+                            ul {
+                                li {
+                                    a {
+                                        &:hover {
+                                            color: #C71585;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .side-box,
+                    .content-list {
+                        a {
+                            &:hover {
+                                .pre-text,
+                                .body-text {
+                                    color: #C71585;
+                                }
+                            }
+                        }
+                    }
+                    .Vertical-circle-list {
+                        ul {
+                            li {
+                                a {
+                                    &:hover {
+                                        border-color: #C71585;
+                                        .body-text {
+                                            color: #C71585;
+                                        }
+                                    }
+                                    .body-text {
+                                        &::before {
+                                            color: #C71585;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .health-economy-card {
+                    .cards-topic {
+                        border-top: 3px solid #F08080;
+                        .main-topic {
+                            a {
+                                color: #F08080;
+                            }
+                        }
+                        .topic-sub-tags {
+                            ul {
+                                li {
+                                    a {
+                                        &:hover {
+                                            color: #F08080;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .side-box,
+                    .content-list {
+                        a {
+                            &:hover {
+                                .pre-text,
+                                .body-text {
+                                    color: #F08080;
+                                }
+                            }
+                        }
+                    }
+                    .Vertical-circle-list {
+                        ul {
+                            li {
+                                a {
+                                    &:hover {
+                                        border-color: #F08080;
+                                        .body-text {
+                                            color: #F08080;
+                                        }
+                                    }
+                                    .body-text {
+                                        &::before {
+                                            color: #F08080;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .market-guide-card {
+                    .cards-topic {
+                        border-top: 3px solid #BA55D3;
+                        .main-topic {
+                            a {
+                                color: #BA55D3;
+                            }
+                        }
+                        .topic-sub-tags {
+                            ul {
+                                li {
+                                    a {
+                                        &:hover {
+                                            color: #BA55D3;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .side-box,
+                    .content-list {
+                        a {
+                            &:hover {
+                                .pre-text,
+                                .body-text {
+                                    color: #BA55D3;
+                                }
+                            }
+                        }
+                    }
+                    .Vertical-circle-list {
+                        ul {
+                            li {
+                                a {
+                                    &:hover {
+                                        border-color: #BA55D3;
+                                        .body-text {
+                                            color: #BA55D3;
+                                        }
+                                    }
+                                    .body-text {
+                                        &::before {
+                                            color: #BA55D3;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .multimedia-card {
+                    .col-lg-3 {
+                        .news-left-list {
+                            a {
+                                &:hover {
+                                    border-color: #b71818;
+                                    .body-text {
+                                        color: #b71818;
+                                    }
+                                }
+                                .content-text {
+                                    .body-text {
+                                        &::before {
+                                            content: "\f04b";
+                                            font-size: 13px !important;
+                                            color: #da9696;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .content-img {
+                            &::after {
+                                background: rgba(0,64,173, .8);
+                                padding: 1.6px 4.2px;
+                                font-size: 11px;
+                            }
+                        }
+                    }
+                    .side-box {
+                        @media (min-width: 1300px) {
+                            .body-text {
+                                margin-bottom: 22.5px !important;
+                            }
+                        }
+                        @media (min-width: 1200px) and (max-width: 1300px) {
+                            .body-text {
+                                margin-bottom: 38px !important;
+                            }
+                        }
+                        @media (min-width: 992px) and (max-width: 1200px) {
+                            .body-text {
+                                margin-bottom: 71px !important;
+                            }
+                        }
+                        @media (min-width: 768px) and (max-width: 992px) {
+                            .body-text {
+                                margin-bottom: 21.5px !important;
+                            }
+                        }
+                        .content-img {
+                            &::after {
+                                background: rgba(0,64,173, .8);
+                                padding: 2.5px 6.3px;
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+                .provinces-card {
+                    .topic-sub-tags {
+                        ul {
+                            li {
+                                a {
+                                    font-weight: bold;
+                                    color: #111;
+                                }
+                            }
+                        }
+                    }
+                    .col-lg-3 {
+                        position: relative;
+                        @media (min-width: 768px) and (max-width: 992px) {
+                            background-color: #e5e5e5;
+                        }
+                        @media (max-width: 768px)  {
+                            margin-bottom: 10px;
+                        }
+                        .news-right-list {
+                            background: #303030;
+                            @media (min-width: 768px) and (max-width: 992px) {
+                                display: none;
+                            }
+                            @media (max-width: 768px)  {
+                                margin-bottom: 0;
+                            }
+                            li {
+                                a {
+                                    &:hover {
+                                        .body-text {
+                                            color: #ffae31;
+                                        }
+                                    }
+                                    border: none;
+                                    .content-text {
+                                        color: #fff;
+                                    }
+                                }
+                            }
+                        }
+                        .more {
+                            @media (min-width: 768px) and (max-width: 992px) {
+                                display: none;
+                            }
+                            @media (max-width: 768px) {
+                                bottom: 27px;
+                                left: 10px;
+                            }
+                            font-size: 18px;
+                            color: #b71818;
+                            font-weight: bold;
+                            padding: 4px 10px 5px;
+                            position: absolute;
+                            bottom: 16px;
+                            left: 12px;
+                            z-index: 100;
+                            &:hover {
+                                a {
+                                    color: white;
+                                }
+                            }
+                        }
+                    }
+                    .col-lg-6 {
+                        position: relative;
+                        background: #e5e5e5;
+                        max-height: 295.5px;
+                        .iran-map {
+                            svg {
+                                width: 100%;
+                                max-height: 295.5px;
+                                @media (min-width: 768px) and (max-width: 992px) {
+                                    padding-left: 8px;
+                                }
+                                .border path {
+                                    fill: #999;
+                                }
+                                .province path {
+                                    fill: #ccc;
+                                    &:hover {
+                                        fill: #b71819;
+                                        cursor: pointer;
+                                    }
+                                }
+                                .sea path, .lake path {
+                                    fill: #6caed8;
+                                }
+                                .island path {
+                                    fill: #fff;
+                                }
+                                .guilan {
+                                    fill: #b71819 !important;
+                                }
+                            }
+                        }
+                        select {
+                            position: absolute;
+                            top: 7px;
+                            right: 8px;
+                            padding: 5px 10px 7px 29px;
+                            font-family: tahoma;
+                            font-size: 12px;
+                            box-shadow: inset 0 1px 2px #fff, 0 1px 2px rgba(0, 0, 0, 0.2);
+                            border-radius: 3px;
+                            border: 1px solid #a0a0a0;
+                            outline: 0;
+                            text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+                            width: -moz-fit-content;
+                            width: fit-content;
+                            background: linear-gradient(#fff, #ededed);
+                            &:hover {
+                                box-shadow: inset 0 1px 2px #fff, 0 2px 4px rgba(0, 0, 0, 0.2);
+                            }
+                            @media (min-width: 768px) and (max-width: 992px) {
+                                right: -238px;
+                            }
+                        }
+                        i {
+                            position: absolute;
+                            top: 15px;
+                            right: 114px;
+                            @media (min-width: 768px) and (max-width: 992px) {
+                                right: -132px;
+                                top: 14.5px;
+                            }
+                        }
+                    }
+                    .side-ads-box {
+                        @media (min-width: 768px) and (max-width: 992px) {
+                            background-color: transparent;
+                            margin: 10px 0 16px;
+                        }
+                        @media (max-width: 768px) {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+                .requirements-card {
+                    margin-bottom: 20px;
+                    @media (min-width: 992px) and (max-width: 1200px){
+                        .topic-sub-tags {
+                            ul {
+                                li {
+                                    &:last-child {
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .cards-topic {
+                        border-top: 3px solid #cc4129;
+                        .main-topic {
+                            a {
+                                color: #cc4129;
+                            }
+                        }
+                        .topic-sub-tags {
+                            ul {
+                                li {
+                                    a {
+                                        &:hover {
+                                            color: #cc4129;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .news-card-icons {
+                            a {
+                                @media (min-width: 768px) and (max-width: 1200px) {
+                                    white-space: nowrap;
+                                }
+                                color: #fff;
+                                padding: 4px 14.5px 6px 15px;
+                                background: #cc4129;
+                                font-size: 16px;
+                                &:hover {
+                                    background: #333;
+                                }
+                                span {
+                                    position: relative;
+                                    bottom: 1px;
+                                }
+                                i {
+                                    font-size: 18px;
+                                    position: relative;
+                                    bottom: -1px;
+                                    margin-left: 3px;
+                                }
+                            }
+                        }
+                    }
+                    .img-wrapper {
+                        a {
+                            &:hover img {
+                                transform: scale(1.02);
+                            }
+                            .content-text {
+                                padding-bottom: 22px;
+                                @media (max-width: 992px) {
+                                    padding: 10px 10px 13px;
+                                }
+                                .body-text {
+                                    font-size: 23px;
+                                    margin: 0;
+                                    line-height: 1.22;
+                                    @media (min-width: 768px) and (max-width: 992px) {
+                                        font-size: 15px;
+                                        line-height: 1.1;
+                                    }
+                                    @media (max-width: 768px) {
+                                        font-size: 15px;
+                                    }
+                                }
+                                bottom: 2px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        footer {
+            position: relative;
+            background-color: #3f3f3f;
+            color: #eee;
+            background-image: repeating-linear-gradient(to bottom right,rgb(17, 17, 17) 0%,rgb(41, 41, 41) 50%,rgb(153, 153, 153) 100%);
+            .footer-search-icons {
+                background: rgba(19, 19, 19, 0.5);
+                @media (max-width: 768px) {
+                    flex-direction: column;
+                }
+                .footer-search {
+                    padding-left: 8px;
+                    @media (max-width: 768px) {
+                        padding: 0;
+
+                    }
+                    input {
+                        @media (max-width: 768px) {
+                            text-align: center;
+                        }
+                        background: transparent;
+                        border: none;
+                        outline: none;
+                        padding: 11px 54px;
+                        font-size: 19px;
+                        color: white;
+                        text-align: left;
+                        &::placeholder {
+                            color: #fff;
+                        }
+                        &:focus {
+                            border: none;
+                            outline: none;
+                            box-shadow: none;
+                            &::placeholder {
+                                color: #999;
+                            }
+                        }
+                    }
+                    i {
+                        position: absolute;
+                        top: 17px;
+                        left: 20px;
+                        font-size: 17px;
+                        @media (max-width: 768px) {
+                            display: none;
+                        }
+                    }
+                }
+                .footer-icons-weather {
+                    padding-right: 8px;
+                    @media (max-width: 768px) {
+                        padding: 0;
+                    }
+                    ul {
+                        li {
+                            &:first-child a {
+                                margin: 0;
+                            }
+                            a {
+                                display: block;
+                                padding: 8px 0;
+                                margin-right: 3.5px;
+                                &:hover {
+                                    background: #5f5f5f;
+                                }
+                                i {
+                                    padding: 7.1px 18px;
+                                    color: white;
+                                    font-size: 20px;
+                                    &::after {
+                                        display: inline-block;
+                                        content: "";
+                                        border-left: 1px solid #777;
+                                        height: 33px;
+                                        position: absolute;
+                                        top: 0;
+                                        right: 0;
+                                        left: 0;
+                                        @media (max-width: 768px) {
+                                            display: none;
+                                        }
+                                    }
+                                }
+                                .fa-chevron-up {
+                                    position: relative;
+                                    bottom: -1px;
+                                    font-size: 24px;
+                                    padding: 5.1px 18px;
+                                    &::after {
+                                        top: -3px;
+                                    }
+                                }
+                                .fa-rss {
+                                    position: relative;
+                                    bottom: 1px;
+                                    &::after {
+                                        top: 1px;
+                                    }
+                                }
+                                .fa-house-chimney {
+                                    position: relative;
+                                    bottom: 2px;
+                                    font-size: 18px;
+                                    padding: 8.1px 19px;
+                                }
+                            }
+                        }
+                    }
+                    .footer-weather {
+                        img {
+                            width: 35px;
+                            margin: 0 15px 0 3px;
+                            @media (max-width: 768px) {
+                                margin-left: 0;
+                            }
+                        }
+                        span {
+                            font-size: 15px;
+                            font-weight: bold;
+                            margin-top: 2px;
+                        }
+                        .weather-city {
+                            position: relative;
+                            select {
+                                background: transparent;
+                                width: -moz-fit-content;
+                                width: fit-content;
+                                padding: 0;
+                                font-weight: bold;
+                                font-size: 16px;
+                                box-shadow: none;
+                                border: none;
+                                margin: 0 17.5px 0 0;
+                                padding-right: 9px;
+                                outline: none;
+                                text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+                                color: #fff;
+                                option {
+                                    color: var(--bs-body-color);
+                                }
+                                &:focus {
+                                    outline: none;
+                                }
+                                &:hover {
+                                    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.99);
+                                }
+                            }
+                            i {
+                                position: absolute;
+                                top: 4px;
+                                left: 5px;
+                                color: #555;
+                                font-size: 12px;
+                                @media (max-width: 768px) {
+                                    top: 4.5px;
+                                    left: 5.5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .footer-main {
+                background: rgba(0,0,0,.5);
+                .footer-background {
+                    background-color: rgba(0,0,0,.3);
+                    padding: 10px 0 15px;
+                    .site-name {
+                        .site-name-wrapper {
+                            text-align: center;
+                            margin: -7px 0 8px;
+                            span {
+                                // @media (min-width: 768px) and (max-width: 1200px) {
+                                //     margin-right: 16px;
+                                // }
+                                font: normal 60px arial;
+                                color: white;
+                                text-align: center;
+                                margin: -10px 0 5px;
+                                line-height: 1;
+                                position: relative;
+                                span {
+                                    &:last-child {
+                                        font-weight: bold;
+                                        margin-left: -17px;
+                                    }
+                                    &:first-child {
+                                        display: inline-block;
+                                        font-size: 25px;
+                                        line-height: 1;
+                                        position: absolute;
+                                        bottom: 2px;
+                                        right: -15px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .social-media {
+                        .social-media-wrapper {
+                            margin: 5px 0 8px;
+                            text-align: center;
+                            ul {
+                                li {
+                                    display: inline-block;
+                                    a {
+                                        display: block;
+                                        opacity: .8;
+                                        border-radius: 100%;
+                                        overflow: hidden;
+                                        width: 34px;
+                                        height: 34px;
+                                        margin: 0 15px;
+                                        @media (max-width: 992px) {
+                                            margin: 0 2.2px;
+                                        }
+                                        &:hover {
+                                            opacity: 1;
+                                        }
+                                        i {
+                                            position: relative;
+                                            top: 8px;
+                                            font-size: 17px;
+                                            color: white;
+                                        }
+                                    }
+                                    .telegram {
+                                        background-color: #2ca5e0;
+                                        i {
+                                            right: 1px;
+                                        }
+                                    }
+                                    .instagram {
+                                        background-color: #b16c4f;
+                                        i {
+                                            top: 8.5px;
+                                            right: 0.3px;
+                                        }
+                                    }
+                                    .linkedin {
+                                        background-color: #006dbf;
+                                        i {
+                                            top: 9px;
+                                        }
+                                    }
+                                    .google-plus {
+                                        background-color: #d03b2e;
+                                        i {
+                                            top: 8.5px;
+                                        }
+                                    }
+                                    .twitter {
+                                        background-color: #29c5f6;
+                                        i {
+                                            font-size: 15px;
+                                            top: 9px;
+                                            left: 0.3px;
+                                        }
+                                    }
+                                    .facebook {
+                                        background-color: #3b5997;
+                                        i {
+                                            font-size: 16px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .col-md-2 {
+                        &:last-child {
+                            @media (max-width: 768px) {
+                                display: none;
+                            }
+                        }
+                        ul {
+                            li {
+                                a {
+                                    @media (min-width: 768px) and (max-width: 1200px) {
+                                        font-size: 12px;
+                                    }
+                                    @media (max-width: 768px) {
+                                        text-align: center;
+                                    }
+                                    display: block;
+                                    padding: 2.5px 4px 4.5px 0;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    white-space: nowrap;
+                                    color: #ddd;
+                                    font-size: 14px;
+                                    &:hover {
+                                        background: #b71818;
+                                        color: #fff;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .copyright-language-translate {
+                z-index: 1000;
+                background-image: linear-gradient(138deg,#080808,#232323);
+                font-size: 13px;
+                padding: 9px 0 2px;
+                color: #999;
+                .col-lg-9 {
+                    .copyright-text {
+                        @media (max-width: 768px) {
+                            margin-right: 8px;
+                        }
+                        margin: 5px 0 10px;
+                        font-size: 14px;
+                        font-weight: bold;
+                        @media (max-width: 992px) {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            margin: 13.5px 0 26px;
+                        }
+                        @media (max-width: 768px) {
+                            margin-bottom: 13px;
+                        }
+                        a {
+                            img {
+                                margin: 0 0 -6px 13px;
+                                height: 36px;
+                                position: relative;
+                                top: -5px;
+                                @media (max-width: 992px) {
+                                    margin: 0;
+                                }
+                                @media (max-width: 768px) {
+                                    margin-bottom: 1px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .col-lg-3 {
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: flex-start;
+                    @media (max-width: 992px) {
+                        justify-content: center;
+                        margin-bottom: 16px;
+                    }
+                    .form-select {
+                        width: -moz-fit-content;
+                        width: fit-content;
+                        text-align: center;
+                        font-size: 13px;
+                        background: #fff;
+                        border: none;
+                        outline: none;
+                        margin: 3px 0 0 30px;
+                        padding: 2px 0;
+                        @media (max-width: 992px) {
+                            margin: 0;
+                        }
+                        span {
+                            color: rgb(118, 118, 118);
+                        }
+                        a {
+                            span {
+                                &:first-child {
+                                    position: relative;
+                                    top: 2px;
+                                    right: 2px;
+                                    margin: 0 3px 0 4px;
+                                    @media (max-width: 768px) {
+                                        margin-left: 5px;
+                                    }
+                                }
+                                &:last-child {
+                                    border-right: 1px solid rgb(187, 187, 187);
+                                    font-family: Arial, "nasim", sans-serif;
+                                    color: #000;
+                                    vertical-align: middle;
+                                    padding: 0 5px 0 2px;
+                                    font-size: 10pt;
+                                }
+                            }
+                        }
+                        img {
+                            margin-left: 2px;
+                            margin-right: 2px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
